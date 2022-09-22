@@ -1,0 +1,31 @@
+//
+//
+// Header & Logo
+//
+//
+.header {
+    color: $white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.box-header {
+    @include box($top: 0px, $bottom: 0px);
+}
+
+.logo-sinopac {
+    width: 191px;
+    position: relative;
+    z-index: 2;
+}
+
+@include media($table-landscape) {
+    .header {
+        height: 80px;
+    }
+
+    .logo-sinopac {
+        width: 230px;
+    }
+}

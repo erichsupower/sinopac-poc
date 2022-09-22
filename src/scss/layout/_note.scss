@@ -1,0 +1,17 @@
+//
+//
+// 注意事項
+//
+//
+.note {
+    font-size: $font-size-sm;
+    display: none;
+
+    @include media($table-landscape) {
+        display: flex;
+    }
+}
+
+.box-note {
+    @include box($bottom: 170px);
+}

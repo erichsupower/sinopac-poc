@@ -1,0 +1,27 @@
+//
+//
+// 商品詳細資料：分類 Tab
+//
+//
+.tab {
+  @include box($top: 18px, $right: 0, $bottom: 15px, $left: 0);
+  border-bottom: 2px solid $gray-3;
+}
+
+.tabItem {
+  border-bottom: 2px solid $gray-3;
+  position: relative;
+  bottom: -2px;
+  padding: 12px;
+  font-size: $fs-16;
+  cursor: pointer;
+
+  &.active {
+    color: $blue-light;
+    border-bottom: 2px solid $blue-light;
+  }
+
+  &:hover {
+    color: $blue-light;
+  }
+}

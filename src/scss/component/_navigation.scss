@@ -1,0 +1,158 @@
+//
+//
+// Global navigation
+//
+//
+.navi-global {
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        width: 100%;
+        background-color: $blue;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        flex-wrap: nowrap;
+    }
+}
+
+.navi-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    &.active::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 13px;
+        right: 25px;
+        background-image: url("../images/icon/arrow-3-down.svg");
+
+        @include media($table-landscape) {
+            display: none;
+        }
+    }
+}
+
+.navi-item-a {
+    margin-left: 25px;
+    color: $white;
+    $space: 18px;
+    padding-top: $space;
+    padding-bottom: $space;
+}
+
+.navi-item-btn {
+    margin-left: 25px;
+    $space: 9px;
+    margin-top: $space;
+    margin-bottom: $space;
+}
+
+.navi-subItem {
+    display: flex;
+    flex-direction: column;
+    background-color: $blue-light;
+    z-index: 1;
+}
+
+.navi-subItem-a {
+    display: block;
+    margin-left: 40px;
+    color: $white;
+    white-space: nowrap;
+    $space: 12px;
+    padding-top: $space;
+    padding-bottom: $space;
+}
+
+.btn-logout {
+    margin-bottom: 120px;
+}
+
+@include media($table-protrait) {
+    .navi-global {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navi-item-a {
+        $space: 0;
+        margin-top: $space;
+        margin-bottom: $space;
+        margin-left: 10px;
+        text-align: center;
+        line-height: 1.3rem;
+
+        &:hover {
+            color: $blue-sky;
+        }
+    }
+
+    .navi-item-btn {
+        margin-left: 10px;
+    }
+
+    .navi-subItem {
+        position: absolute;
+        top: 45px;
+        left: 10px;
+        width: auto;
+        overflow: hidden;
+        height: 0;
+        @include slow();
+
+        &.active {
+            height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    }
+
+    .navi-subItem-a {
+        width: auto;
+        padding: 8px 16px;
+        margin: 0;
+        font-size: $fs-14;
+
+        &:hover {
+            color: $blue-sky;
+        }
+    }
+
+    .btn-back {
+        display: none;
+    }
+
+    .btn-logout {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@include media($desktop) {
+    .navi-item-a {
+        margin-left: 24px;
+    }
+
+    .navi-item-btn {
+        margin-left: 24px;
+    }
+
+    .navi-subItem {
+        left: 25px;
+    }
+}

@@ -1,0 +1,50 @@
+//
+//
+// flex 排版設定
+//
+//
+%flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-h-center {
+  @extend %flex;
+  justify-content: center;
+}
+
+.flex-h-left {
+  @extend %flex;
+  justify-content: flex-start;
+}
+
+.flex-h-right {
+  @extend %flex;
+  justify-content: flex-end;
+}
+
+.flex-h-between {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+.flex-v-center {
+  @extend %flex;
+  align-items: center;
+}
+
+.flex-v-top {
+  @extend %flex;
+  align-items: flex-start;
+}
+
+.flex-v-bottom {
+  @extend %flex;
+  align-items: flex-end;
+}
+
+.flex-v-stretch {
+  @extend %flex;
+  align-items: stretch;
+}

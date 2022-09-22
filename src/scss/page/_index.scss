@@ -1,0 +1,142 @@
+//
+//
+// 庫存明細：Dashboard
+//
+//
+.box-storehouse {
+    @include box($top: 60px, $bottom: 22px);
+
+    @include media($table-landscape) {
+        flex-direction: row;
+    }
+}
+
+.store-dashboard {
+    @include media($table-landscape) {
+        flex-wrap: nowrap;
+    }
+}
+
+.store-dashboard-item {
+    margin-bottom: 24px;
+
+    @include media($table-landscape) {
+        min-width: 185px;
+        margin-right: 20px;
+        margin-left: 20px;
+        width: 24%;
+        flex-grow: 1;
+    }
+}
+
+.store-dashboard-item:nth-child(1) {
+    width: 100%;
+
+    .store-dashboard-item-num {
+        font-size: $fs-34;
+    }
+
+    @include media($table-landscape) {
+        &:nth-child(1) {
+            width: 25%;
+        }
+    }
+}
+
+.store-dashboard-item:nth-child(2) {
+    margin-right: 10px;
+    flex-grow: 1;
+
+    @include media($table-landscape) {
+        &:nth-child(2) {
+            width: 25%;
+        }
+    }
+}
+
+.store-dashboard-item:nth-child(3) {
+    margin-right: 10px;
+    flex-grow: 1;
+
+    @include media($table-landscape) {
+        &:nth-child(2) {
+            width: 25%;
+        }
+    }
+}
+
+.store-dashboard-item:nth-child(4) {
+    flex-grow: 1;
+
+    @include media($table-landscape) {
+        &:nth-child(2) {
+            width: 25%;
+        }
+    }
+}
+
+.store-dashboard-item-title {
+    font-size: $fs-13;
+    color: $gray-6;
+    margin-bottom: 5px;
+
+    @include media($table-landscape) {
+        font-size: $fs-16;
+    }
+}
+
+.store-dashboard-item-num {
+    font-size: $fs-14;
+    font-weight: $font-weight-bold;
+
+    @include media($table-landscape) {
+        font-size: $fs-32;
+    }
+}
+//
+//
+// 庫存明細：註解文字
+//
+//
+.store-notes {
+    font-size: $fs-12;
+    color: $gray-6;
+
+    span {
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    @include media($table-landscape) {
+        font-size: $fs-14;
+        margin-left: 24px;
+        margin-right: 24px;
+
+        span {
+            display: inline-block;
+            margin-right: 24px;
+        }
+    }
+}
+//
+//
+// 庫存明細：各貨幣信託資訊
+//
+//
+.box-trust {
+    @include box($top: 0px, $right: 0px, $bottom: 30px, $left: 0px);
+    overflow: hidden;
+}
+
+.store-trust {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+//
+//
+// 商品詳細資料
+//
+//
+.box-information {
+    @include box($top: 37px, $bottom: 50px);
+}

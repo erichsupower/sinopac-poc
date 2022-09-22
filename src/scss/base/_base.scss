@@ -1,0 +1,95 @@
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+%element {
+  content: "";
+  display: block;
+}
+//
+//
+// HTML TAG Reset Style
+//
+//
+body {
+  font-size: $font-size-md;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  &.active {
+    overflow: hidden;
+  }
+}
+
+h1,
+.h1 {
+  @extend %reset;
+  font-size: $h1-font-size;
+  font-weight: $font-weight-normal;
+  margin-bottom: 24px;
+
+  &::before {
+    @extend %element;
+    width: 4px;
+    height: 24px;
+    background-color: $blue-light;
+    margin-right: 10px;
+    margin-top: -2px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size;
+  font-weight: $font-weight-normal;
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+  font-weight: $font-weight-normal;
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size;
+  font-weight: $font-weight-normal;
+}
+
+h5,
+.h5 {
+  font-size: $h5-font-size;
+  font-weight: $font-weight-normal;
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size;
+  font-weight: $font-weight-normal;
+}
+
+p {
+  font-weight: $font-weight-normal;
+  line-height: $line-height-sm;
+  text-align: justify;
+  text-justify: auto;
+}
+
+ul {
+  @extend %reset;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

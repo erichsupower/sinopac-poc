@@ -1,0 +1,187 @@
+//
+//
+// 資訊數量導覽列
+//
+//
+.amount {
+    @include box($top: 32px, $right: 0, $bottom: 0, $left: 0);
+    border-bottom: 1px solid $gray-2;
+    padding-bottom: 15px;
+}
+
+.amount-total {
+    font-size: $fs-14;
+    margin-top: 5px;
+}
+
+.amount-quantity {
+    font-size: $fs-14;
+}
+
+.amount-quantity-qText {
+    display: none;
+    color: $gray-6;
+
+    @include media($table-landscape) {
+        display: inline-block;
+    }
+}
+
+.amount-quantity-q {
+    color: $gray-4;
+    width: 26px;
+    height: 26px;
+    border: 1px solid $gray-4;
+    border-radius: 13px;
+    padding: 0;
+    margin-left: 7px;
+    margin-right: 0;
+    @include slow();
+
+    &.active,
+    &.active:hover {
+        background-color: $blue-light;
+        color: $white;
+        border: 1px solid $blue-light;
+    }
+
+    &:hover {
+        background-color: $gray-3;
+    }
+}
+//
+//
+// 詳細表格資訊
+//
+//
+.dt {
+    display: table;
+    width: 100%;
+}
+
+.dtRow {
+    border-bottom: 1px solid $gray-2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 97px;
+}
+
+.dtRow:nth-child(1) {
+    display: none;
+}
+
+.dtHead {
+    position: relative;
+    font-size: $fs-16;
+    padding: 2px;
+    color: $gray-6;
+}
+
+.dtCell {
+    font-size: $fs-13;
+    padding: 2px;
+}
+
+.dtCell-cost {
+    display: none;
+}
+.group-cell:nth-child(1) {
+    width: 65px;
+}
+
+.group-target {
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 18px;
+}
+
+.group-more {
+    $space: 18px;
+    width: 10px;
+    margin-left: $space;
+    margin-right: $space;
+
+    img {
+        width: 100%;
+    }
+}
+
+.dtCell-target-title {
+    position: absolute;
+    top: 3px;
+    left: 50px;
+    font-size: $fs-14;
+}
+
+.dtCell-target-subtile {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    font-size: $fs-12;
+    color: $gray-5;
+}
+
+.dtCell-target-brand {
+    $size: 40px;
+    width: $size;
+    height: $size;
+
+    img {
+        width: 100%;
+    }
+}
+
+%btn-sort {
+    width: 8px;
+    height: 14px;
+    position: absolute;
+    top: 3px;
+    right: -12px;
+    background-position: right 0px top 0, 0 0;
+    background-size: 8px 14px;
+    background-repeat: no-repeat;
+}
+
+.sort-up {
+    @extend %btn-sort;
+    background-image: url("../images/icon/sort-ascending.png");
+}
+
+.sort-down {
+    @extend %btn-sort;
+    background-image: url("../images/icon/sort-descending.png");
+}
+
+.sort-normal {
+    @extend %btn-sort;
+    background-image: url("../images/icon/sort-sequence.png");
+}
+
+@include media($table-landscape) {
+    .dtRow:nth-child(1) {
+        display: flex;
+        height: 47px;
+    }
+
+    .dtCell-cost {
+        display: flex;
+    }
+
+    .group-target {
+        flex-grow: 0;
+        margin-bottom: 0;
+    }
+
+    .group-data {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-left: 15%;
+    }
+    .group-more {
+        $space: 30px;
+        margin-left: $space;
+        margin-right: $space;
+    }
+}

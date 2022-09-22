@@ -1,0 +1,32 @@
+%select {
+    padding: 17px 16px 15px 16px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: $white;
+    border: 1px solid $gray-5;
+    font-size: $fs-16;
+    font-weight: $font-weight-normal;
+    appearance: none;
+    background-image: url("../images/icon/arrow_down.png");
+    background-position: right 20px top 50%, 0 0;
+    background-size: 10px 5px;
+    background-repeat: no-repeat;
+}
+
+.select-product {
+    @extend %select;
+}
+
+.select-currency {
+    @extend %select;
+}
+
+@include media($table-landscape) {
+    .select-product {
+        max-width: 355px;
+    }
+
+    .select-currency {
+        max-width: 165px;
+    }
+}

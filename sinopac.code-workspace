@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../github/Materialize/materialize-src"
+		},
+		{
+			"path": "../../github/bootstrap-5.1.3"
+		}
+	],
+	"settings": {}
+}

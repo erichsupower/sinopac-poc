@@ -1,0 +1,41 @@
+%btn {
+    display: flex;
+    justify-content: center;
+    border: 1px solid $white;
+    border-radius: 4px;
+    padding: 15px 13px;
+    cursor: pointer;
+    width: calc(100% - 50px);
+    @include slow();
+}
+
+.btn-hollow {
+    @extend %btn;
+    color: $white;
+
+    &:hover {
+        background-color: white;
+        color: $blue-light;
+    }
+
+    @include media($table-landscape) {
+        width: auto;
+        padding: 8px 13px;
+    }
+}
+
+.btn-solid {
+    @extend %btn;
+    background-color: $white;
+    color: $blue-light;
+
+    &:hover {
+        background-color: $blue-light;
+        color: $white;
+    }
+
+    @include media($table-landscape) {
+        width: auto;
+        padding: 8px 13px;
+    }
+}

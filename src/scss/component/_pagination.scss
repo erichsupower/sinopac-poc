@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  @include box($top: 30px, $right: 0, $left: 0);
+}
+
+.pagi {
+  cursor: pointer;
+  width: 26px;
+  height: 31px;
+  border: 1px solid $gray-4;
+  border-radius: 4px;
+  font-size: $fs-14;
+  color: $gray-6;
+  margin-left: 3px;
+  margin-right: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include slow();
+
+  &.active,
+  &.active:hover {
+    background-color: $blue-light;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $gray-3;
+  }
+}
+
+.pagi-arrow {
+  width: 9px;
+}

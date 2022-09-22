@@ -1,0 +1,49 @@
+//
+//
+// Hamburger Button
+//
+//
+.hamburger {
+    transform: scale(0.36) translateX(25px);
+    z-index: 1;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active {
+        .hamburger-line {
+            &:nth-child(1) {
+                transform: translateY(13px) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: translateY(-13px) rotate(-45deg);
+            }
+        }
+    }
+}
+
+.hamburger-line {
+    width: 50px;
+    height: 5px;
+    background-color: $white;
+    display: block;
+    margin: 8px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+@include media($phone) {
+    .hamburger {
+        top: 22px;
+        right: 8px;
+        transform: scale(0.6);
+    }
+}
+@include media($table-protrait) {
+    .hamburger {
+        display: none;
+    }
+}

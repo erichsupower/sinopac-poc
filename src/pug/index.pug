@@ -1,0 +1,193 @@
+doctype html
+html(lang="zh-TW")
+
+    //- include head
+    include template/_head.pug
+
+    body
+
+        //- include header
+        include template/_header.pug
+
+        //- 庫存明細
+        section.storehouse.flex-h-center.bg-gray-1
+
+            .box-storehouse
+                //- 標題
+                h1.flex-v-center 庫存明細
+                //- Dashboard
+                .store-dashboard.flex-h-center
+                    -
+                        let dataDashboard = [
+                            {
+                                ad: "",
+                                title: "目前帳戶約當現值(TWD)",
+                                num: "5,000,000"
+                            },
+                            { 
+                                ad: "",
+                                title: "本金(TWD)",
+                                num: "4,000,000"
+                            }
+                            ,
+                            {
+                                ad: "up",
+                                title: "目前損益(TWD)",
+                                num: "+1,000,000"
+                            }
+                            ,
+                            {
+                                ad: "up",
+                                title: "報酬率",
+                                num: "20.00%"
+                            }
+                        ]
+                    each data in dataDashboard
+                        .store-dashboard-item
+                            .store-dashboard-item-title= data.title
+                            if data.ad === "up"
+                                .store-dashboard-item-num.color-red= data.num
+                            else if data.ad === "down"
+                                .store-dashboard-item-num.color-green= data.num
+                            else
+                                .store-dashboard-item-num= data.num
+
+                //- 註解文字
+                .store-notes
+                    span 庫存日期：2020/12/05
+                    span 參考匯率：美金 28.25   人民幣 4.31  港幣 3.58
+
+            .box-trust
+                //- 各貨幣信託資訊
+                .store-trust.flex-h-left
+                    -
+                        let dataTrust = [
+                            {
+                                ad: "up",
+                                title: "美金信託",
+                                range: "+105,999",
+                                percent: "5.00%",
+                                subtitle: "總市值(USD)",
+                                num: "999,999,999",
+                                img: "images/flag/USD.png"
+                            },
+                            {
+                                ad: "down",
+                                title: "臺幣信託",
+                                range: "-12,509",
+                                percent: "3.28%",
+                                subtitle: "總市值(TWD)",
+                                num: "999,999,999",
+                                img: "images/flag/TWD.png"
+                            }
+                            ,
+                            {
+                                ad: "down",
+                                title: "人民幣信託",
+                                range: "-12,509",
+                                percent: "3.28%",
+                                subtitle: "總市值(RMB)",
+                                num: "999,999,999",
+                                img: "images/flag/CNY.png"
+                            }
+                            ,
+                            {
+                                ad: "down",
+                                title: "港幣信託",
+                                range: "-12,509",
+                                percent: "3.28%",
+                                subtitle: "總市值(HKD)",
+                                num: "999,999,999",
+                                img: "images/flag/HKD.png"
+                            }
+                        ]
+                    each data in dataTrust
+                        .card-trust
+                            img.card-trust-img(src=data.img)
+                            .card-trust-title= data.title 
+                            if data.ad === "up"
+                                .card-trust-range.color-red= data.range
+                            else
+                                .card-trust-range.color-green= data.range
+                            if data.ad === "up"
+                                .card-trust-percent.color-red= data.percent
+                            else
+                                .card-trust-percent.color-green= data.percent
+                            .card-trust-subtitle= data.subtitle
+                            .card-trust-num= data.num
+
+        //- 商品詳細資料
+        section.information.flex-h-center
+
+            .box-information
+                //- 商品下拉選單
+                select.select-product(name='productKey' id='productKey') 
+                    - let productNum = ['168-000-000868886-1', '168-000-000868886-2', '168-000-000868886-3','168-000-000868886-4']
+                    each skill in productNum
+                        option(value= skill, selected= skill === 'D#')= skill
+                //- 分類 Tab
+                .tab.flex-h-left
+                    each val, index in ['美股/ETF', '港股/ETF']
+                        if index == 0
+                            button.tabItem.active= val
+                        else
+                            li.tabItem= val
+                //- 幣別下拉選單
+                select.select-currency(name='currency' id='currency') 
+                    - let currency = ['台幣', '美金', '歐元', '人民幣']
+                    each skill in currency
+                        option(value= skill, selected= skill === 'D#')= skill
+                //- 資訊數量導覽
+                .amount.flex-h-between
+                    .amount-total 共125筆
+                    .amount-quantity
+                        span.amount-quantity-qText 顯示筆數
+                        button.amount-quantity-q.amount-quantity-q10.active 10
+                        button.amount-quantity-q.amount-quantity-q30 30
+                        button.amount-quantity-q.amount-quantity-q50 50
+                .dt
+                    .dtBody
+                        .dtRow
+                            .group-head.group-target
+                                .dtHead.dtHead-target 投資標的
+                                    button.sort-up
+                            .group-head.group-data
+                                .dtHead.dtHead-value 投資現值
+                                    button.sort-down
+                                .dtHead.dtHead-cost 投資成本
+                                    button.sort-normal
+                                .dtHead.dtHead-income 目前損益
+                                    button.sort-normal
+                                .dtHead.dtHead-reward 報酬率
+                                    button.sort-normal
+                            .group-head.group-more
+                                .dtHead.dtHead-more
+                        - let n = 0
+                            while n < 12
+                                .dtRow
+                                    .group-cell.group-target
+                                        .dtCell-target-brand
+                                            img(src="images/icon/google.png")
+                                        .dtCell-target-title GOOG
+                                        .dtCell-target-subtile GOOGLE
+                                    .group-cell.group-data
+                                        .dtCell.dtCell-value USD 5,000.25
+                                        .dtCell.dtCell-cost USD 5,000.25
+                                        .dtCell.dtCell-income.color-red + USD 1,000.25
+                                        .dtCell.dtCell-reward.color-red 20.00%
+                                    .group-cell.group-more
+                                        img.more(src= "images/icon/arrow-2-right.png")
+                                - n += 1
+                //- include pagination
+                include template/_pagination.pug
+
+        //- include note
+        include template/_note.pug
+
+        //- include footer
+        include template/_footer.pug
+
+        //- jQuery
+        script(src="js/vendor/jquery-3.6.0.min.js")
+        //- Javascript
+        script(src="js/main.js" type="module")

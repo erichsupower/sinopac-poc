@@ -1,0 +1,118 @@
+// color-variables
+$white: #ffffff !default;
+$black: #000000 !default;
+$blue: #062b50 !default;
+$blue-light: #064e96 !default;
+$blue-sky: #3299ff !default;
+$red: #ff5252 !default;
+$green: #15b342 !default;
+
+// gray-variables
+$gray-1: #f3f4f5 !default;
+$gray-2: #e4ebef !default;
+$gray-3: #e5e5e5 !default;
+$gray-4: #cacfd9 !default;
+$gray-5: #b9c1d9 !default;
+$gray-6: #6e798c !default;
+$gray-7: #555555 !default;
+
+// color-gray-group
+$colors: (
+    "white": $white,
+    "black": $black,
+    "blue": $blue,
+    "blue-light": $blue-light,
+    "blue-sky": $blue-sky,
+    "red": $red,
+    "green": $green,
+    "gray-1": $gray-1,
+    "gray-2": $gray-2,
+    "gray-4": $gray-4,
+    "gray-5": $gray-5,
+    "gray-6": $gray-6,
+    "gray-7": $gray-7,
+) !default;
+
+// font-size
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.8 !default;
+$font-size-md: $font-size-base * 0.95 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-xl: $font-size-base * 1.8 !default;
+$font-size-xxl: $font-size-base * 2.2 !default;
+
+// heilight-font-size
+$h1-font-size: $font-size-base * 1.2 !default;
+$h2-font-size: $font-size-base * 1.15 !default;
+$h3-font-size: $font-size-base * 1.1 !default;
+$h4-font-size: $font-size-base * 1.05 !default;
+$h5-font-size: $font-size-base * 1 !default;
+$h6-font-size: $font-size-base * 1 !default;
+
+// font-size-pixel
+$fs-8: 8px !default;
+$fs-9: 9px !default;
+$fs-10: 10px !default;
+$fs-11: 11px !default;
+$fs-12: 12px !default;
+$fs-13: 13px !default;
+$fs-14: 14px !default;
+$fs-15: 15px !default;
+$fs-16: 16px !default;
+$fs-17: 17px !default;
+$fs-18: 18px !default;
+$fs-19: 19px !default;
+$fs-20: 20px !default;
+$fs-21: 21px !default;
+$fs-22: 22px !default;
+$fs-23: 23px !default;
+$fs-24: 24px !default;
+$fs-25: 25px !default;
+$fs-26: 26px !default;
+$fs-27: 27px !default;
+$fs-28: 28px !default;
+$fs-29: 29px !default;
+$fs-30: 30px !default;
+$fs-31: 31px !default;
+$fs-32: 32px !default;
+$fs-33: 33px !default;
+$fs-34: 34px !default;
+$fs-35: 35px !default;
+$fs-36: 36px !default;
+
+// font-weight
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 500 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+// font-line-height
+$line-height-base: 1.5rem !default;
+$line-height-sm: $line-height-base * 0.8 !default;
+$line-height-md: $line-height-base * 1 !default;
+$line-height-lg: $line-height-base * 1.5 !default;
+$line-height-xl: $line-height-base * 1.8 !default;
+$line-height-xxl: $line-height-base * 2 !default;
+
+// Media Query
+$phone: "(mix-width: 576px)" !default;
+$table-landscape: "(min-width: 768px)" !default;
+$table-protrait: "(min-width: 992px)" !default;
+$desktop: "(min-width: 1200px)" !default;
+$wide: "(min-width: 1400px)" !default;
+
+// 輸出所有色票做為預設顏色
+@each $color, $value in $colors {
+    .color-#{$color} {
+        color: #{$value};
+    }
+}
+
+// 輸出所有色票做為預設背景顏色
+@each $color, $value in $colors {
+    .bg-#{$color} {
+        background-color: #{$value};
+    }
+}

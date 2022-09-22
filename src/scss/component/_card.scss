@@ -1,0 +1,45 @@
+.card-trust {
+    flex-grow: 1;
+    background-color: $white;
+    padding: 20px;
+    margin-right: 20px;
+    position: relative;
+    min-width: 185px;
+    width: 24%;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.card-trust-img {
+    width: 30px;
+    margin-bottom: 12px;
+}
+
+.card-trust-title {
+    position: absolute;
+    top: 26px;
+    left: 59px;
+    font-size: $fs-18;
+}
+
+.card-trust-range {
+    font-size: $fs-20;
+    margin-bottom: 4px;
+}
+
+.card-trust-percent {
+    font-size: $fs-14;
+    margin-bottom: 14px;
+}
+
+.card-trust-subtitle {
+    font-size: $fs-12;
+    margin-bottom: 4px;
+    color: $gray-6;
+}
+
+.card-trust-num {
+    font-size: $fs-20;
+}
