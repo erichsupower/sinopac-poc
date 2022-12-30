@@ -1,2 +1,156 @@
-!function(){var e=[,function(){let e=window.innerWidth;$(".hamburger").click((function(){$(this).toggleClass("active"),$(".navi-global").toggleClass("active"),$("body").toggleClass("active")})),$(window).resize((function(){e=window.innerWidth,e<768&&($(".hamburger").removeClass("active"),$(".navi-global").removeClass("active"),$("body").removeClass("active"))})),$(".navi-item").hover((function(){console.log($(this)),$(this).children(".navi-subItem").addClass("active")}),(function(){$(this).children(".navi-subItem").removeClass("active")}))},function(e,t,n){"use strict";n.r(t),n.d(t,{tex0:function(){return o},tex1:function(){return r},tex2:function(){return a}});const o="KateKateKateKateKateKateKateKateKateKateKateKateKateKateKateKate";let r=e=>console.log(e),a=e=>console.log("name ="+e)}],t={};function n(o){var r=t[o];if(void 0!==r)return r.exports;var a=t[o]={exports:{}};return e[o](a,a.exports,n),a.exports}n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,{a:t}),t},n.d=function(e,t){for(var o in t)n.o(t,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var o={};!function(){"use strict";n.r(o);n(1);var e=n(2);const t="Eric";console.log(e.tex0),e.tex1(t),e.tex2(t)}()}();
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
+/***/ (function() {
+
+//get window width
+let width = window.innerWidth;
+
+// Hamburger toggle
+$(".hamburger").click(function () {
+  $(this).toggleClass("active");
+  $(".navi-global").toggleClass("active");
+  $("body").toggleClass("active");
+});
+
+// Window resize
+$(window).resize(function () {
+  //reset window width
+  width = window.innerWidth;
+
+  //close global navigation mask
+  if (width < 768) {
+    $(".hamburger").removeClass("active");
+    $(".navi-global").removeClass("active");
+    $("body").removeClass("active");
+  }
+});
+
+// 展開子選單
+$(".navi-item").hover(
+  function () {
+    console.log($(this));
+    $(this).children(".navi-subItem").addClass("active");
+  },
+  function () {
+    $(this).children(".navi-subItem").removeClass("active");
+  }
+);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tex0": function() { return /* binding */ tex0; },
+/* harmony export */   "tex1": function() { return /* binding */ tex1; },
+/* harmony export */   "tex2": function() { return /* binding */ tex2; }
+/* harmony export */ });
+const tex0 = "KateKateKateKateKateKateKateKateKateKateKateKateKateKateKateKate";
+
+let tex1 = (name) => {
+    return console.log(name);
+}
+
+let tex2 = (name) => {
+    return console.log("name =" + name);
+}
+
+
+// export default tex ;
+
+/***/ })
+/******/ 	]);
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _module_hamburge_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _module_hamburge_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_module_hamburge_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _module_module_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+// Global navigation hamburge for mobile
+
+
+
+const name = "Eric";
+console.log(_module_module_js__WEBPACK_IMPORTED_MODULE_1__.tex0);
+_module_module_js__WEBPACK_IMPORTED_MODULE_1__.tex1(name);
+_module_module_js__WEBPACK_IMPORTED_MODULE_1__.tex2(name);
+
+
+}();
+/******/ })()
+;
 //# sourceMappingURL=main.js.map
